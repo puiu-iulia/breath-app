@@ -7,8 +7,10 @@ import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.breathe.util.Prefs;
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private Button startButton;
     private Prefs prefs;
     private MediaPlayer mediaPlayer;
-
+    private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,21 +32,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         imageView = findViewById(R.id.lotusImage);
-        breathsText = findViewById(R.id.breathsTakenText);
-        timeText = findViewById(R.id.lastBreathText);
-        sessionText = findViewById(R.id.todayMinutesText);
         guideText = findViewById(R.id.guideText);
+        guideText.setVisibility(View.INVISIBLE);
         prefs = new Prefs(this);
 
-        mediaPlayer = new MediaPlayer();
-        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.sound);
+        Spinner spinner = findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.values, R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(R.layout.simple_spinner_item);
+        spinner.setAdapter(adapter);
 
-        startIntroAnimation();
+//        mediaPlayer = new MediaPlayer();
+//        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.sound);
 
-        sessionText.setText(prefs.getSessions() + " min today");
-        breathsText.setText(prefs.getBreaths() + " Breaths");
-        timeText.setText(prefs.getDate());
-
+//        startIntroAnimation();
 
 
         startButton = findViewById(R.id.startButton);
@@ -60,21 +61,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void startIntroAnimation() {
-        ViewAnimator
-                .animate(guideText)
-                .scale(0, 1)
-                .duration(1500)
-                .onStart(new AnimationListener.Start() {
-                    @Override
-                    public void onStart() {
-                        guideText.setText("Breathe");
-
-                    }
-                })
-                .start();
-
-    }
+//    private void startIntroAnimation() {
+//        ViewAnimator
+//                .animate(guideText)
+//                .scale(0, 1)
+//                .duration(1500)
+//                .onStart(new AnimationListener.Start() {
+//                    @Override
+//                    public void onStart() {
+//                        guideText.setText("Breathe");
+//
+//                    }
+//                })
+//                .start();
+//
+//    }
 
     private void startAnimation() {
         ViewAnimator
@@ -124,8 +125,6 @@ public class MainActivity extends AppCompatActivity {
                                 finish();
                             }
                         }.start();
-
-
                     }
                 })
                 .start();
