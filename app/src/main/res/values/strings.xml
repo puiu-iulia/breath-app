@@ -1,14 +1,31 @@
 <resources>
     <string name="app_name">Breathe</string>
     <string-array name="values">
-        <item>2-0-4-0</item>
-        <item>4-0-8-0</item>
-        <item>10-0-5-0</item>
-        <item>12-0-6-0</item>
-        <item>2-2-4-0</item>
-        <item>4-4-8-0</item>
-        <item>5-5-10-0</item>
-        <item>6-6-12-0</item>
+        <item> 2 - 0 - 4 - 0 </item>
+        <item> 4 - 0 - 8 - 0 </item>
+        <item> 5 - 0 - 10 - 0 </item>
+        <item> 6 - 0 - 12 - 0 </item>
+<!--        <item> 2 - 2 - 4 - 0 </item>-->
+<!--        <item> 4 - 4 - 8 - 0 </item>-->
+<!--        <item> 5 - 5 - 10 -0 </item>-->
+<!--        <item> 6 - 6 - 12 -0 </item>-->
+<!--        <item> 2 - 0 - 4 - 2 </item>-->
+<!--        <item> 4 - 0 - 8 - 4 </item>-->
+<!--        <item> 5 - 0 - 10 -5 </item>-->
+<!--        <item> 6 - 0 - 12 -6 </item>-->
     </string-array>
     <string name="values_prompt">Choose Inhale-Hold-Exhale-Hold Time</string>
+    <string-array name="time_values">
+        <item> 1 min</item>
+        <item> 2 min</item>
+        <item> 3 min</item>
+        <item> 4 min</item>
+        <item> 5 min</item>
+        <item> 6 min</item>
+        <item> 7 min </item>
+        <item> 8 min</item>
+        <item> 9 min</item>
+        <item> 10 min</item>
+    </string-array>
+    <string name="time_values_prompt">Choose Timer</string>
 </resources>

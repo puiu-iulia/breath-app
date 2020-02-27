@@ -41,11 +41,51 @@ public class Prefs {
         return time;
     }
 
+    public void setInhale(int inhale) {
+        preferences.edit().putInt("inhale", inhale).apply();
+    }
+
+    public int getInhale() {
+        return preferences.getInt("inhale", 0);
+    }
+
+    public void setExhale(int exhale) {
+        preferences.edit().putInt("exhale", exhale).apply();
+    }
+
+    public int getExhale() {
+        return preferences.getInt("exhale", 0);
+    }
+
+    public void setInhalehold(int inhaleHold) {
+        preferences.edit().putInt("inhaleHold", inhaleHold).apply();
+    }
+
+    public int getInhaleHold() {
+        return preferences.getInt("inhaleHold", 0);
+    }
+
+    public void setExhaleHold(int exhaleHold) {
+        preferences.edit().putInt("exhaleHold", exhaleHold).apply();
+    }
+
+    public int getExhaleHold() {
+        return preferences.getInt("exhaleHold", 0);
+    }
+
     public void setBreaths(int breaths) {
         preferences.edit().putInt("breaths", breaths).apply(); //saving our breaths into a system file
     }
 
     public int getBreaths() {
         return preferences.getInt("breaths", 0);
+    }
+
+    public void setTime(int time) {
+        preferences.edit().putInt("time", time).apply();
+    }
+
+    public int getTime() {
+        return preferences.getInt("time", 1);
     }
 }
